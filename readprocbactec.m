@@ -69,8 +69,8 @@ for n=1:length(data(1,:))/5;
         l=legend({'Experimental points',['t_0=',num2str(t0,2),' [u(t>t_0)>0]'],...
                   ['T_s=',num2str(Ts,3),', K=',num2str(K)],...
                   'Gompertz`s curve:',... 
-                  'u=K*exp(-exp[-r*(t-t`)])',...    
-                  ['r=',num2str(r,3),', t`=',num2str(td,3)]});
+                  'u=K*exp(-exp[-r*(t-t_d)])',...    
+                  ['r=',num2str(r,3),', t_d=',num2str(td,3)]});
         set(l,'Location','southeast','FontSize',FntSz);
         xlabel('t, hours')
         ylabel('u(t), BACTEC growth units')
@@ -123,11 +123,11 @@ for n=1:length(data(1,:))/5;
         outCellPar{2,2}=t0;
         outCellPar{3,1}='Time of reaching stationarity:';
         outCellPar{3,2}=Ts;
-        outCellPar{4,1}='Maximal growth speed (r):';
+        outCellPar{4,1}='Maximal growth rate (r):';
         outCellPar{4,2}=r;
         outCellPar{5,1}='Moment of maximal growth (t`):';
         outCellPar{5,2}=td;
-        outCellPar{6,1}='Stationary state (K):';
+        outCellPar{6,1}='Stationary state value (K):';
         outCellPar{6,2}=K;
 
         outrangePar=['''',intlet1,num2str(1),':',intlet2,num2str(6),''''];
