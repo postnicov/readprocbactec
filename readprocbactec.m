@@ -8,11 +8,15 @@ clear;close all;clc;
 xlsdat=xlsread([fpath,fname]);
 outName=['PROCESSED',fname];
 % Delete NaN rows
-ind=isfinite(xlsdat(:,1));
-xlsdat=xlsdat(ind,:);
+[tabh,tabw]=size(xlsdat);
+for j=1:tabw;
+    ind=isfinite(xlsdat(:,j));
+    xlsdatfin(1:sum(ind),j)=xlsdat(ind,j);
+end
+sumcol=sum(xlsdatfin);
 % Delete NaN columns
-ind=isfinite(xlsdat(1,:));
-data=xlsdat(:,ind);
+ind=find(sumcol>0);
+data=xlsdatfin(:,ind);
 %% Converting time
 % Number of sample
 for n=1:length(data(1,:))/5;
@@ -61,7 +65,7 @@ for n=1:length(data(1,:))/5;
         hold on
         plot(t0,ufull(t0ind(1)),'x','color','green','LineWidth',2,'MarkerSize',8)
         plot(Ts,u(indfs(1)),'x','color','red','LineWidth',2,'MarkerSize',8)
-        tfit=t0:tfull(end);
+        tfit=t0:tfull(t0ind(end));
         g=gompertz(tfit,K,r,td);
         plot(tfit,g,'-','color','black','LineWidth',1.5)
         plot(t(end),K,'color','white')% "Virtual curve" added to write in paramters in the legend
@@ -77,7 +81,7 @@ for n=1:length(data(1,:))/5;
         title(['Sample #',num2str(n)])
         set(gca,'FontSize',FntSz)
 
-        figname=['fig',fname,'_Sample',num2str(n)','.png'];
+        figname=['fig',fname,'_Sample',num2str(n),'.png'];
         print(figname,'-dpng')
         %% Processed experimental data for output
 
