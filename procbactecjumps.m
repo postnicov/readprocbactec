@@ -63,6 +63,6 @@ for j=1:length(xlsdat(3,:))/2;
    ylabel('d^2u/dt^2, g.u./hour^2')
    set(gca,'FontSize',FntSz)
    
-   figname=['fig_jumps',fname,'_Sample',num2str(j)','.png'];
+   figname=['fig_jumps',fname,'_Sample',num2str(j),'.png'];
    print(figname,'-dpng')
 end
