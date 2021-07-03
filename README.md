@@ -8,3 +8,6 @@ The function **procbactecjumps.m** reads the output Excel file produced by the f
 The file *H37Rv.xls* contains an example of real recordings of the growth curve of *M. tuberculosis* (the standard strain H37Rv).
 
 For the usage with GNU Octave, pkg load io should be started first for reading Excel spreadsheets.
+
+The related publication: 
+* Postnikov, E.B., Dogonadze M.Z., Lavrova A.I., "A MATLAB/OCTAVE toolbox for analysis of BACTEC MGIT 960 data for mycobacterial growth." 2020 5th International Conference on Intelligent Informatics and Biomedical Sciences (ICIIBMS). IEEE, 2020. https://ieeexplore.ieee.org/abstract/document/9336199
