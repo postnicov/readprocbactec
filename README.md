@@ -9,5 +9,5 @@ The file *H37Rv.xls* contains an example of real recordings of the growth curve 
 
 For the usage with GNU Octave, pkg load io should be started first for reading Excel spreadsheets.
 
-The related publication: 
+The related conference report: 
 * Postnikov, E.B., Dogonadze M.Z., Lavrova A.I., "A MATLAB/OCTAVE toolbox for analysis of BACTEC MGIT 960 data for mycobacterial growth." 2020 5th International Conference on Intelligent Informatics and Biomedical Sciences (ICIIBMS). IEEE, 2020. https://ieeexplore.ieee.org/abstract/document/9336199
